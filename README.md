@@ -12,12 +12,12 @@ Here's how it works:
 
 1. **Parent to Child**:
    - In the parent component, you type a message and click "Send".
-   - The message is sent to the child iframe using `iFrameRef.current.contentWindow.postMessage(message, "https://iframe-communication.onrender.com")`.
+   - The message is sent to the child iframe using `iFrameRef.current.contentWindow.postMessage(message, "https://lucky-sunshine-da15f6.netlify.app/")`.
    - The child component listens for messages and updates its state with the received message.
 
 2. **Child to Parent**:
    - In the child component, you type a message and click "Send".
-   - The message is sent to the parent window using `window.parent.postMessage(message, "https://iframe-communication.onrender.com")`.
+   - The message is sent to the parent window using `window.parent.postMessage(message, "https://lucky-sunshine-da15f6.netlify.app/")`.
    - The parent component listens for messages and updates its state with the received message.
 
 So, the `window.postMessage` API lets the parent and child windows send messages to each other safely. The received messages are then displayed by updating the state in the respective components.
