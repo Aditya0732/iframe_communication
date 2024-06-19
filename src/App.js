@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { Parent } from "./components/Parent";
+import { IframeChild } from "./components/IframeChild";
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-[#1b1b1b] to-[#2c2c2c] overflow-hidden">
+      <div className="animate-pulse-slow">
+        <Routes>
+          <Route path="/" element={<Parent />} />
+          <Route path="/iframe-child/" element={<IframeChild />} />
+        </Routes>
+      </div>
     </div>
   );
-}
-
-export default App;
+};
