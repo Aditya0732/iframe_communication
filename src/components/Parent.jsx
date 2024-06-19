@@ -7,12 +7,12 @@ export const Parent = () => {
 
   const sendMessage = () => {
     if (!iFrameRef.current) return;
-    iFrameRef.current.contentWindow.postMessage(messageToSend, "http://localhost:3000");
+    iFrameRef.current.contentWindow.postMessage(messageToSend, "https://iframe-communication.onrender.com");
   };
 
   useEffect(() => {
     window.addEventListener("message", function (e) {
-      if (e.origin !== "http://localhost:3000") return;
+      if (e.origin !== "https://iframe-communication.onrender.com") return;
       if (typeof e.data === "string" && e.data.indexOf("webpackHotUpdate") !== 0) {
         setRecievedMessage(e.data);
       }
