@@ -41,7 +41,7 @@ export const Parent = () => {
       <br />
       <iframe
         ref={iFrameRef}
-        src="/iframe-child/"
+        src="https://iframe-communication.onrender.com/iframe-child/"
         width="600"
         height="300"
         title="Child iframe"
