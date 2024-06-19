@@ -7,12 +7,12 @@ export const Parent = () => {
 
   const sendMessage = () => {
     if (!iFrameRef.current) return;
-    iFrameRef.current.contentWindow.postMessage(messageToSend, "https://iframe-communication.onrender.com");
+    iFrameRef.current.contentWindow.postMessage(messageToSend, "https://lucky-sunshine-da15f6.netlify.app/");
   };
 
   useEffect(() => {
     window.addEventListener("message", function (e) {
-      if (e.origin !== "https://iframe-communication.onrender.com") return;
+      if (e.origin !== "https://lucky-sunshine-da15f6.netlify.app/") return;
       if (typeof e.data === "string" && e.data.indexOf("webpackHotUpdate") !== 0) {
         setRecievedMessage(e.data);
       }

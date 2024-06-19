@@ -5,12 +5,12 @@ export const IframeChild = () => {
   const [messageToSend, setMessageToSend] = useState("");
 
   const sendMessage = () => {
-    window.parent.postMessage(messageToSend, "https://iframe-communication.onrender.com");
+    window.parent.postMessage(messageToSend, "https://lucky-sunshine-da15f6.netlify.app/");
   };
 
   useEffect(() => {
     window.addEventListener("message", function (e) {
-      if (e.origin !== "https://iframe-communication.onrender.com") return;
+      if (e.origin !== "https://lucky-sunshine-da15f6.netlify.app/") return;
       if (typeof e.data === "string" && e.data.indexOf("webpackHotUpdate") !== 0) {
         setRecievedMessage(e.data);
       }
